@@ -48,12 +48,12 @@ void Punkt2::setY(double Y)
 
 //Geters
 
-double Punkt2::getX()
+double Punkt2::getX() const
 {
     return x;
 }
 
-double Punkt2::getY()
+double Punkt2::getY() const
 {
     return y;
 }
@@ -80,3 +80,21 @@ double Punkt2::getDistance( Punkt2 _p)
     double y2 = _p.getY();
     return sqrt(pow(x2-x,2)+pow(y2-y,2));
 }
+
+//operators
+
+Punkt2 Punkt2::operator+ (const Punkt2 &p) const
+{
+    return Punkt2(x + p.getX(), y + p.getY());
+}
+
+Punkt2 Punkt2::operator- (const Punkt2 &p) const
+{
+    return Punkt2(x - p.getX(), y - p.getY());
+}
+
+double Punkt2::operator* (const Punkt2 &p) const
+{
+    return x * p.getX() + y * p.getY();
+}
+

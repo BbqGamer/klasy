@@ -17,5 +17,17 @@ int main()
     
     cout << "Number of polygon instances: " << polygon.number_of_instances << endl;
     
+    Punkt2 a{1,2};
+    Punkt2 b{2,3};
+    Punkt2 c;
+    c = a+b;
+    cout << c.getX() << " " << c.getY() << endl;
+    
+    Punkt2 d{2,2};
+    Punkt2 e{3,3};
+    double f = d*e;
+    cout << f << endl;
+    
+    
     return 0;
 }

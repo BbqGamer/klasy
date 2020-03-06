@@ -41,7 +41,16 @@ Polygon::Polygon(std::vector<std::vector<double> >VerticeVector, int Count)
         punkt.setX(VerticeVector[i][0]);
         punkt.setY(VerticeVector[i][1]);
         vertices[i] = punkt;
-     
+    }
+}
+
+Polygon::Polygon(const Polygon &polygon)
+{
+    vertices = new Punkt2[polygon.count];
+    count = polygon.count;
+    for(int i = 0; i < polygon.count; i++)
+    {
+        vertices[i] = polygon.vertices[i];
     }
 }
 

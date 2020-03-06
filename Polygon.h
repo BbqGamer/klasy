@@ -13,7 +13,10 @@ class Polygon
 
         Polygon();
         Polygon(std::vector< std::vector<double> >, int Count);
+        Polygon(const Polygon &polygon);
         ~Polygon();
+    
+        //Polygon methods
     
         void setVertices (Punkt2 * _vertices, int _count);
         

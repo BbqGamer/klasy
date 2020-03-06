@@ -17,8 +17,8 @@ class Punkt2
         void setY(double _y);
         
         //gettery
-        double getX();
-        double getY();
+        double getX() const;
+        double getY() const;
 
         //współrzędne biegunowe
         double getRadius();
@@ -26,4 +26,10 @@ class Punkt2
         
         //odległość punktu od punktu _p
         double getDistance( Punkt2 _p);
+    
+        //operators
+        Punkt2 operator+ (const Punkt2 &p) const;
+        Punkt2 operator- (const Punkt2 &p) const;
+        double operator* (const Punkt2 &p) const;
+    
 };
