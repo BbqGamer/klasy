@@ -13,8 +13,8 @@ class Polygon
 
         Polygon();
         Polygon(std::vector< std::vector<double> >, int Count);
-        Polygon(const Polygon &polygon);
-        ~Polygon();
+        Polygon(const Polygon &polygon); /* konstruktor kopiujący */
+        ~Polygon(); /* dekonstruktor */
     
         //Polygon methods
     

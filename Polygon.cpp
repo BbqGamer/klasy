@@ -52,6 +52,7 @@ Polygon::Polygon(const Polygon &polygon)
     {
         vertices[i] = polygon.vertices[i];
     }
+    number_of_instances++;
 }
 
 Polygon::~Polygon()
