@@ -1,3 +1,5 @@
+#include <iostream>
+
 class Punkt2
 {
 
@@ -6,6 +8,8 @@ class Punkt2
     
     public:
         
+        friend std::ostream& operator<< (std::ostream& os, const Punkt2& obj);
+    
         static int number_of_instances;
     
         Punkt2();
@@ -33,3 +37,5 @@ class Punkt2
         double operator* (const Punkt2 &p) const;
     
 };
+
+std::ostream& operator<< (std::ostream& os, const Punkt2& obj);

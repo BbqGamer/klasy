@@ -98,3 +98,8 @@ double Punkt2::operator* (const Punkt2 &p) const
     return x * p.getX() + y * p.getY();
 }
 
+std::ostream& operator<< (std::ostream& os, const Punkt2& obj)
+{
+    os << "(" << obj.getX() << ", " << obj.getY() << ")";
+    return os;
+}

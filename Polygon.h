@@ -15,6 +15,8 @@ class Polygon
         Polygon(std::vector< std::vector<double> >, int Count);
         Polygon(const Polygon &polygon); /* konstruktor kopiujący */
         ~Polygon(); /* dekonstruktor */
+        
+        friend std::ostream& operator<<(std::ostream& os, const Polygon& obj);
     
         //Polygon methods
     
@@ -35,3 +37,5 @@ class Polygon
         Punkt2 * getVertices(); /* pobiera tablicę wierzchołków */
     
 };
+
+std::ostream& operator<<(std::ostream& os, const Polygon& obj);

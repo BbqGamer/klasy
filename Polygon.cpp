@@ -134,3 +134,13 @@ double Polygon::getArea()
     
     return 0.5 * absolute(area);
 }
+
+
+std::ostream& operator<<(std::ostream& os, const Polygon& obj)
+{
+    for(int i = 0; i < obj.count; i++)
+    {
+        os << i << ": " << obj.vertices[i] << std::endl;
+    }
+    return os;
+}
