@@ -2,7 +2,7 @@
  *
  * \brief Zawiera definicję klasy Polygon
  *
- * Plik zawiera implementację metod klasy Punkt2
+ * Plik zawiera implementację metod klasy Polygon
  *
  * \autor Adam Korba
  * \date 2020.02.26
