@@ -1,5 +1,5 @@
 #include "Punkt2.h"
-#include <iostream>
+#include <vector>
 
 class Polygon
 {

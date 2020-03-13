@@ -8,9 +8,7 @@
  * \date 2020.02.26
  *
  */
-#include<iostream>
 #include "Polygon.h"
-#include <vector>
 
 int Polygon::number_of_instances = 0;
 
@@ -125,12 +123,13 @@ double Polygon::getArea()
 {
     double area = 0;
     
-    for(int i = 1; i < count-1; i++)
+    for(int i = 0; i < count-1; i++)
     {
-        area += vertices[i].getX() * (vertices[i+1].getY()-vertices[i-1].getY());
+        area += vertices[i].getX() * vertices[i+1].getY();
+        area -= vertices[i].getY() * vertices[i+1].getX();
     }
-    area += vertices[0].getX() * (vertices[1].getY()-vertices[count-1].getY());
-    area += vertices[count-1].getX() * (vertices[0].getY()-vertices[count-2].getY());
+    area += vertices[count-1].getX() * vertices[0].getY();
+    area -= vertices[count-1].getY() * vertices[0].getX();
     
     return 0.5 * absolute(area);
 }
