@@ -100,6 +100,6 @@ double Punkt2::operator* (const Punkt2 &p) const
 
 std::ostream& operator<< (std::ostream& os, const Punkt2& obj)
 {
-    os << "(" << obj.getX() << ", " << obj.getY() << ")";
+    os << "(" << obj.getX() << ", " << obj.getY() << ")" << std::endl;
     return os;
 }

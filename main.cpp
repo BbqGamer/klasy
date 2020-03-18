@@ -4,14 +4,17 @@ using namespace std;
 
 int main()
 {
-    std::vector<std::vector<double> > vertices = {{2,0}, {0,2}, {2,2}, {0,0}};
     
+    Polygon polygon = {{2,0},{0,2},{2,2},{0,0}};
     
-    Polygon polygon = Polygon(vertices, 4);
-
+    Polygon polygon2;
+    polygon2 = polygon;
+    polygon.changeVertex(1, 2, 34);
+    
     cout << polygon;
-    cout << polygon.getConvexArea() << endl; 
-    cout << polygon.getArea();
+    cout << polygon2;
+    polygon2[2] = Punkt2{4,5};
+    cout << polygon2;
     
     return 0;
 }

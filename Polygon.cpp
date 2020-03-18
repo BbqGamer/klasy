@@ -53,6 +53,14 @@ Polygon::Polygon(const Polygon &polygon)
     number_of_instances++;
 }
 
+Polygon::Polygon(std::initializer_list<Punkt2> punkty)
+{
+    count = (int)punkty.size();
+    vertices = new Punkt2[count];
+    int i = 0;
+    for(auto p : punkty) {vertices[i++] = p;}
+}
+
 Polygon::~Polygon()
 {
     number_of_instances--;
@@ -135,11 +143,35 @@ double Polygon::getArea()
 }
 
 
+Polygon & Polygon::operator=(const Polygon &polygon)
+{
+    if(&polygon != this)
+    {
+        if (count != polygon.count)
+        {
+            delete[] vertices;
+            vertices = new Punkt2[polygon.count];
+        }
+        count = polygon.count;
+        for(int i = 0; i < count; i++)
+        {
+            vertices[i] = polygon.vertices[i];
+        }
+    }
+    return *this;
+}
+
+Punkt2 & Polygon::operator[](int i)
+{
+    return vertices[i];
+}
+
+
 std::ostream& operator<<(std::ostream& os, const Polygon& obj)
 {
     for(int i = 0; i < obj.count; i++)
     {
-        os << i << ": " << obj.vertices[i] << std::endl;
+        os << i << ": " << obj.vertices[i];
     }
     return os;
 }

@@ -14,6 +14,7 @@ class Polygon
         Polygon();
         Polygon(std::vector< std::vector<double> >, int Count);
         Polygon(const Polygon &polygon); /* konstruktor kopiujący */
+        Polygon(std::initializer_list<Punkt2> punkty);
         ~Polygon(); /* dekonstruktor */
         
         friend std::ostream& operator<<(std::ostream& os, const Polygon& obj);
@@ -35,6 +36,10 @@ class Polygon
         double getArea(); /* oblicza pole powierzchni dowolnego wielokąta */
     
         Punkt2 * getVertices(); /* pobiera tablicę wierzchołków */
+    
+        Polygon & operator=(const Polygon &polygon);
+    
+        Punkt2 & operator[](int i);
     
 };
 
