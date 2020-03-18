@@ -20,17 +20,14 @@ double absolute(double x)
     return x;
 }
 
-Polygon::Polygon()
+Polygon::Polygon(): vertices{nullptr}, count{0}
 {
-    vertices = nullptr;
-    count = 0;
     number_of_instances++;
 }
 
-Polygon::Polygon(std::vector<std::vector<double> >VerticeVector, int Count)
+Polygon::Polygon(std::vector<std::vector<double> >VerticeVector, unsigned int Count): count{Count}
 {
     number_of_instances++;
-    count = Count;
     vertices = new Punkt2[count];
     
     for(int i = 0; i < count; i++)
@@ -147,11 +144,8 @@ Polygon & Polygon::operator=(const Polygon &polygon)
 {
     if(&polygon != this)
     {
-        if (count != polygon.count)
-        {
-            delete[] vertices;
-            vertices = new Punkt2[polygon.count];
-        }
+        delete[] vertices;
+        vertices = new Punkt2[polygon.count];
         count = polygon.count;
         for(int i = 0; i < count; i++)
         {

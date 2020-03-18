@@ -12,7 +12,7 @@ class Polygon
         static int number_of_instances;
 
         Polygon();
-        Polygon(std::vector< std::vector<double> >, int Count);
+        Polygon(std::vector< std::vector<double> >, unsigned int Count);
         Polygon(const Polygon &polygon); /* konstruktor kopiujący */
         Polygon(std::initializer_list<Punkt2> punkty);
         ~Polygon(); /* dekonstruktor */

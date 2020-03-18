@@ -5,10 +5,8 @@ int Punkt2::number_of_instances = 0;
 
 //Constructors
 
-Punkt2::Punkt2()
+Punkt2::Punkt2(): Punkt2(0,0)
 {
-    x = NULL;
-    y = NULL;
     number_of_instances++;
 }
 
