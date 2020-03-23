@@ -58,6 +58,18 @@ Polygon::Polygon(std::initializer_list<Punkt2> punkty)
     for(auto p : punkty) {vertices[i++] = p;}
 }
 
+
+Polygon::Polygon(Polygon && p)
+{
+    number_of_instances++;
+    vertices = p.vertices;
+    count = p.count;
+    
+    p.vertices = nullptr;
+    p.count = 0;
+}
+
+
 Polygon::~Polygon()
 {
     number_of_instances--;

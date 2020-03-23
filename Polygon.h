@@ -15,6 +15,7 @@ class Polygon
         Polygon(std::vector< std::vector<double> >, unsigned int Count);
         Polygon(const Polygon &polygon); /* konstruktor kopiujący */
         Polygon(std::initializer_list<Punkt2> punkty);
+        Polygon(Polygon && p);
         ~Polygon(); /* dekonstruktor */
         
         friend std::ostream& operator<<(std::ostream& os, const Polygon& obj);

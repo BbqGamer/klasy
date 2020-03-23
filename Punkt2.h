@@ -14,6 +14,8 @@ class Punkt2
     
         Punkt2();
         Punkt2(double X, double Y, bool kartez = 1);
+        Punkt2(const Punkt2 &p);
+        Punkt2(Punkt2 && p);
         ~Punkt2();
 
         //settery
@@ -35,6 +37,7 @@ class Punkt2
         Punkt2 operator+ (const Punkt2 &p) const;
         Punkt2 operator- (const Punkt2 &p) const;
         double operator* (const Punkt2 &p) const;
+        Punkt2 & operator=(const Punkt2 &p);
     
 };
 

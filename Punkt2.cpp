@@ -8,6 +8,7 @@ int Punkt2::number_of_instances = 0;
 Punkt2::Punkt2(): Punkt2(0,0)
 {
     number_of_instances++;
+    std::cout << "Uruchomiono konstruktor ()" << std::endl;
 }
 
 Punkt2::Punkt2(double X, double Y, bool kartez)
@@ -24,7 +25,31 @@ Punkt2::Punkt2(double X, double Y, bool kartez)
         x = X/cos(y);
         y = X/sin(y);
     }
+    std::cout << "Uruchomiono konstruktor: (" << x << ", " << y << ")" << std::endl;
 }
+
+
+Punkt2::Punkt2(const Punkt2 & p)
+{
+    number_of_instances++;
+    
+    x = p.getX();
+    y = p.getY();
+    
+    std::cout << "Uruchomiono konstruktor kopiujący!" << std::endl;
+}
+    
+
+Punkt2::Punkt2(Punkt2 && p)
+{
+    number_of_instances++;
+    
+    x = p.getX();
+    y = p.getY();
+    
+    std::cout << "Uruchomiono konstruktor przenoszący!" << std::endl;
+}
+
 
 Punkt2::~Punkt2()
 {
@@ -94,6 +119,16 @@ Punkt2 Punkt2::operator- (const Punkt2 &p) const
 double Punkt2::operator* (const Punkt2 &p) const
 {
     return x * p.getX() + y * p.getY();
+}
+
+Punkt2 & Punkt2::operator=(const Punkt2 &p)
+{
+    if(&p != this)
+    {
+        x = p.getX();
+        y = p.getX();
+    }
+    return *this;
 }
 
 std::ostream& operator<< (std::ostream& os, const Punkt2& obj)
