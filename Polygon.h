@@ -39,7 +39,7 @@ class Polygon
         Punkt2 * getVertices(); /* pobiera tablicę wierzchołków */
     
         Polygon & operator=(const Polygon &polygon);
-    
+        Polygon & operator=(Polygon &&polygon);
         Punkt2 & operator[](int i);
     
 };

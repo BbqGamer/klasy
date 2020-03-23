@@ -37,7 +37,8 @@ class Punkt2
         Punkt2 operator+ (const Punkt2 &p) const;
         Punkt2 operator- (const Punkt2 &p) const;
         double operator* (const Punkt2 &p) const;
-        Punkt2 & operator=(const Punkt2 &p);
+        Punkt2 & operator= (const Punkt2 &p);
+        Punkt2 & operator= (const Punkt2 &&p);
     
 };
 

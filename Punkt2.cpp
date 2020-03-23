@@ -123,13 +123,24 @@ double Punkt2::operator* (const Punkt2 &p) const
 
 Punkt2 & Punkt2::operator=(const Punkt2 &p)
 {
-    if(&p != this)
-    {
-        x = p.getX();
-        y = p.getX();
-    }
+    std::cout << "Uruchomiono kopiujący operator przypisania! (Punkt2)" << std::endl;
+    
+    x = p.getX();
+    y = p.getX();
+        
     return *this;
 }
+
+Punkt2 & Punkt2::operator= (const Punkt2 &&p)
+{
+    std::cout << "Uruchomiono przenoszący operator przypisania! (Punkt2)" << std::endl;
+
+    x = p.getX();
+    y = p.getY();
+
+    return *this;
+}
+
 
 std::ostream& operator<< (std::ostream& os, const Punkt2& obj)
 {

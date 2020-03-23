@@ -41,6 +41,8 @@ Polygon::Polygon(std::vector<std::vector<double> >VerticeVector, unsigned int Co
 
 Polygon::Polygon(const Polygon &polygon)
 {
+    std::cout << "Uruchomiono konstruktor kopiujący (Polygon)" << std::endl;
+    
     vertices = new Punkt2[polygon.count];
     count = polygon.count;
     for(int i = 0; i < polygon.count; i++)
@@ -52,6 +54,7 @@ Polygon::Polygon(const Polygon &polygon)
 
 Polygon::Polygon(std::initializer_list<Punkt2> punkty)
 {
+    std::cout << "Uruchomiono konstruktor listy inicjalizacyjnej (Polygon)" << std::endl;
     count = (int)punkty.size();
     vertices = new Punkt2[count];
     int i = 0;
@@ -61,6 +64,7 @@ Polygon::Polygon(std::initializer_list<Punkt2> punkty)
 
 Polygon::Polygon(Polygon && p)
 {
+    std::cout << "Uruchomiono konstruktor przenoszący (Polygon)" << std::endl;
     number_of_instances++;
     vertices = p.vertices;
     count = p.count;
@@ -154,6 +158,8 @@ double Polygon::getArea()
 
 Polygon & Polygon::operator=(const Polygon &polygon)
 {
+    std::cout << "Uruchomiono kopiujący operator przypisania! (Polygon)" << std::endl;
+    
     if(&polygon != this)
     {
         delete[] vertices;
@@ -164,6 +170,19 @@ Polygon & Polygon::operator=(const Polygon &polygon)
             vertices[i] = polygon.vertices[i];
         }
     }
+    return *this;
+}
+
+Polygon & Polygon::operator=(Polygon &&polygon)
+{
+    std::cout << "Uruchomiono przenoszący operator przypisania! (Polygon)" << std::endl;
+    
+    count = polygon.count;
+    vertices = polygon.vertices;
+    
+    polygon.count = 0;
+    polygon.vertices = nullptr;
+    
     return *this;
 }
 
